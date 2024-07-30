@@ -59,5 +59,9 @@ namespace RealEstate_Management.Controllers
         {
             return View();
         }
+        public ActionResult Sign_Out()
+        {
+            return View();
+        }
     }
 }
