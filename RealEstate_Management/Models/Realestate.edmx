@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBrealestateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BannerMaster">
+          <Key>
+            <PropertyRef Name="Bannerid" />
+          </Key>
+          <Property Name="Bannerid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Banner_Heading" Type="varchar" MaxLength="100" />
+          <Property Name="Banner_Description" Type="varchar" MaxLength="255" />
+          <Property Name="Banner_Image" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="PerfectPropertyMaster">
+          <Key>
+            <PropertyRef Name="Perfectproid" />
+          </Key>
+          <Property Name="Perfectproid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Property_heading" Type="varchar" MaxLength="100" />
+          <Property Name="Property_description" Type="varchar" MaxLength="255" />
+          <Property Name="Property_Point1" Type="varchar" MaxLength="255" />
+          <Property Name="Property_Point2" Type="varchar" MaxLength="255" />
+          <Property Name="Property_Point3" Type="varchar" MaxLength="255" />
+          <Property Name="Property_Image" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="PropertyAgentMaster">
+          <Key>
+            <PropertyRef Name="Agentid" />
+          </Key>
+          <Property Name="Agentid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Agent_name" Type="varchar" MaxLength="100" />
+          <Property Name="Agent_designation" Type="varchar" MaxLength="100" />
+          <Property Name="Agent_contact" Type="bigint" />
+          <Property Name="Agent_Email" Type="varchar" MaxLength="100" />
+          <Property Name="Agent_Facebook" Type="varchar" MaxLength="100" />
+          <Property Name="Agent_Twitter" Type="varchar" MaxLength="100" />
+          <Property Name="Agent_Instagram" Type="varchar" MaxLength="100" />
+          <Property Name="Agent_Image" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="PropertyClientMaster">
+          <Key>
+            <PropertyRef Name="Clientid" />
+          </Key>
+          <Property Name="Clientid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Client_Descriptionv" Type="varchar" MaxLength="255" />
+          <Property Name="Client_name" Type="varchar" MaxLength="100" />
+          <Property Name="Client_profession" Type="varchar" MaxLength="100" />
+          <Property Name="Client_image" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PropertyListingMaster">
+          <Key>
+            <PropertyRef Name="Listid" />
+          </Key>
+          <Property Name="Listid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Property_listcategory" Type="varchar" MaxLength="50" />
+          <Property Name="Property_type" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Location" Type="varchar" MaxLength="200" />
+          <Property Name="BuildingArea" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Bedroom" Type="int" />
+          <Property Name="Bathroom" Type="int" />
+          <Property Name="PropertyList_Image" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="PropertyTypeMaster">
+          <Key>
+            <PropertyRef Name="Typeid" />
+          </Key>
+          <Property Name="Typeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Property_category" Type="varchar" MaxLength="50" />
+          <Property Name="Property_type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Signup">
+          <Key>
+            <PropertyRef Name="Userid" />
+          </Key>
+          <Property Name="Userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Contact" Type="bigint" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="DBrealestateModelStoreContainer">
+          <EntitySet Name="BannerMaster" EntityType="Self.BannerMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PerfectPropertyMaster" EntityType="Self.PerfectPropertyMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyAgentMaster" EntityType="Self.PropertyAgentMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyClientMaster" EntityType="Self.PropertyClientMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyListingMaster" EntityType="Self.PropertyListingMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyTypeMaster" EntityType="Self.PropertyTypeMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Signup" EntityType="Self.Signup" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBrealestateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BannerMaster">
+          <Key>
+            <PropertyRef Name="Bannerid" />
+          </Key>
+          <Property Name="Bannerid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Banner_Heading" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Banner_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Banner_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PerfectPropertyMaster">
+          <Key>
+            <PropertyRef Name="Perfectproid" />
+          </Key>
+          <Property Name="Perfectproid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Property_heading" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Property_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Point1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Point2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Point3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PropertyAgentMaster">
+          <Key>
+            <PropertyRef Name="Agentid" />
+          </Key>
+          <Property Name="Agentid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Agent_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Agent_designation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Agent_contact" Type="Int64" />
+          <Property Name="Agent_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Agent_Facebook" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Agent_Twitter" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Agent_Instagram" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Agent_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PropertyClientMaster">
+          <Key>
+            <PropertyRef Name="Clientid" />
+          </Key>
+          <Property Name="Clientid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Descriptionv" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Client_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Client_profession" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Client_image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PropertyListingMaster">
+          <Key>
+            <PropertyRef Name="Listid" />
+          </Key>
+          <Property Name="Listid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Property_listcategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BuildingArea" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Bedroom" Type="Int32" />
+          <Property Name="Bathroom" Type="Int32" />
+          <Property Name="PropertyList_Image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PropertyTypeMaster">
+          <Key>
+            <PropertyRef Name="Typeid" />
+          </Key>
+          <Property Name="Typeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Property_category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Signup">
+          <Key>
+            <PropertyRef Name="Userid" />
+          </Key>
+          <Property Name="Userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Contact" Type="Int64" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DBrealestateEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BannerMasters" EntityType="Self.BannerMaster" />
+          <EntitySet Name="PerfectPropertyMasters" EntityType="Self.PerfectPropertyMaster" />
+          <EntitySet Name="PropertyAgentMasters" EntityType="Self.PropertyAgentMaster" />
+          <EntitySet Name="PropertyClientMasters" EntityType="Self.PropertyClientMaster" />
+          <EntitySet Name="PropertyListingMasters" EntityType="Self.PropertyListingMaster" />
+          <EntitySet Name="PropertyTypeMasters" EntityType="Self.PropertyTypeMaster" />
+          <EntitySet Name="Signups" EntityType="Self.Signup" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBrealestateModelStoreContainer" CdmEntityContainer="DBrealestateEntities1">
+          <EntitySetMapping Name="BannerMasters">
+            <EntityTypeMapping TypeName="DBrealestateModel.BannerMaster">
+              <MappingFragment StoreEntitySet="BannerMaster">
+                <ScalarProperty Name="Bannerid" ColumnName="Bannerid" />
+                <ScalarProperty Name="Banner_Heading" ColumnName="Banner_Heading" />
+                <ScalarProperty Name="Banner_Description" ColumnName="Banner_Description" />
+                <ScalarProperty Name="Banner_Image" ColumnName="Banner_Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PerfectPropertyMasters">
+            <EntityTypeMapping TypeName="DBrealestateModel.PerfectPropertyMaster">
+              <MappingFragment StoreEntitySet="PerfectPropertyMaster">
+                <ScalarProperty Name="Perfectproid" ColumnName="Perfectproid" />
+                <ScalarProperty Name="Property_heading" ColumnName="Property_heading" />
+                <ScalarProperty Name="Property_description" ColumnName="Property_description" />
+                <ScalarProperty Name="Property_Point1" ColumnName="Property_Point1" />
+                <ScalarProperty Name="Property_Point2" ColumnName="Property_Point2" />
+                <ScalarProperty Name="Property_Point3" ColumnName="Property_Point3" />
+                <ScalarProperty Name="Property_Image" ColumnName="Property_Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyAgentMasters">
+            <EntityTypeMapping TypeName="DBrealestateModel.PropertyAgentMaster">
+              <MappingFragment StoreEntitySet="PropertyAgentMaster">
+                <ScalarProperty Name="Agentid" ColumnName="Agentid" />
+                <ScalarProperty Name="Agent_name" ColumnName="Agent_name" />
+                <ScalarProperty Name="Agent_designation" ColumnName="Agent_designation" />
+                <ScalarProperty Name="Agent_contact" ColumnName="Agent_contact" />
+                <ScalarProperty Name="Agent_Email" ColumnName="Agent_Email" />
+                <ScalarProperty Name="Agent_Facebook" ColumnName="Agent_Facebook" />
+                <ScalarProperty Name="Agent_Twitter" ColumnName="Agent_Twitter" />
+                <ScalarProperty Name="Agent_Instagram" ColumnName="Agent_Instagram" />
+                <ScalarProperty Name="Agent_Image" ColumnName="Agent_Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyClientMasters">
+            <EntityTypeMapping TypeName="DBrealestateModel.PropertyClientMaster">
+              <MappingFragment StoreEntitySet="PropertyClientMaster">
+                <ScalarProperty Name="Clientid" ColumnName="Clientid" />
+                <ScalarProperty Name="Client_Descriptionv" ColumnName="Client_Descriptionv" />
+                <ScalarProperty Name="Client_name" ColumnName="Client_name" />
+                <ScalarProperty Name="Client_profession" ColumnName="Client_profession" />
+                <ScalarProperty Name="Client_image" ColumnName="Client_image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyListingMasters">
+            <EntityTypeMapping TypeName="DBrealestateModel.PropertyListingMaster">
+              <MappingFragment StoreEntitySet="PropertyListingMaster">
+                <ScalarProperty Name="Listid" ColumnName="Listid" />
+                <ScalarProperty Name="Property_listcategory" ColumnName="Property_listcategory" />
+                <ScalarProperty Name="Property_type" ColumnName="Property_type" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="BuildingArea" ColumnName="BuildingArea" />
+                <ScalarProperty Name="Bedroom" ColumnName="Bedroom" />
+                <ScalarProperty Name="Bathroom" ColumnName="Bathroom" />
+                <ScalarProperty Name="PropertyList_Image" ColumnName="PropertyList_Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyTypeMasters">
+            <EntityTypeMapping TypeName="DBrealestateModel.PropertyTypeMaster">
+              <MappingFragment StoreEntitySet="PropertyTypeMaster">
+                <ScalarProperty Name="Typeid" ColumnName="Typeid" />
+                <ScalarProperty Name="Property_category" ColumnName="Property_category" />
+                <ScalarProperty Name="Property_type" ColumnName="Property_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Signups">
+            <EntityTypeMapping TypeName="DBrealestateModel.Signup">
+              <MappingFragment StoreEntitySet="Signup">
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -80,7 +80,8 @@
     position: sticky;
     padding: 0;
     z-index: 9999;
-}
+} 
+
 
 .navbar {
     box-shadow: 0 0 30px rgba(0, 0, 0, .08);
@@ -437,4 +438,7 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+.input-group-outline {
+    width: 100%;
 }

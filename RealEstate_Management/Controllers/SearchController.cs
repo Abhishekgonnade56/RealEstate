@@ -9,6 +9,10 @@ namespace RealEstate_Management.Controllers
     public class SearchController : Controller
     {
         // GET: Search
+        public ActionResult Makaan()
+        {
+            return View();
+        }
         public ActionResult Buy()
         {
             return View();
